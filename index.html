@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Dashboard analítico de marketing de afiliados con métricas de Instagram, TikTok y YouTube."
+    />
+    <title>PulseAds Analytics</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="dashboard-backdrop">
+    <header class="border-b border-neutral-200 bg-white/90 backdrop-blur">
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-4 sm:px-6 md:px-8">
+        <div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.12em] text-neutral-600">Centro de Operaciones</p>
+            <h1 class="mt-1 text-2xl font-bold tracking-tight text-neutral-900 sm:text-3xl">PulseAds Performance Dashboard</h1>
+          </div>
+          <div class="flex flex-wrap items-center gap-2" role="group" aria-label="Acciones rápidas">
+            <button type="button" class="btn-tab" aria-pressed="true">Últimos 30 días</button>
+            <button type="button" class="btn-tab" aria-pressed="false">Comparar trimestre</button>
+            <button type="button" class="btn-tab" aria-pressed="false">Exportar reporte</button>
+          </div>
+        </div>
+        <nav aria-label="Navegación principal" class="flex flex-wrap gap-2">
+          <a href="#kpi" class="btn-tab" aria-current="page">KPI</a>
+          <a href="#drivers" class="btn-tab">Drivers</a>
+          <a href="#operacion" class="btn-tab">Operación</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="mx-auto grid w-full max-w-7xl gap-4 px-4 py-4 sm:px-6 md:gap-6 md:px-8 lg:grid-cols-[16rem_1fr]">
+      <aside class="surface-card p-4 sm:p-5" aria-label="Filtros de contexto y leyenda">
+        <h2 class="panel-title">Contexto de campaña</h2>
+        <p class="mt-2 text-sm text-neutral-700">
+          Portafolio: Producto A (50 EUR), Producto B (120 EUR) y Producto C (80 EUR) con comisión del 15 por ciento por venta.
+        </p>
+
+        <section class="mt-4" aria-labelledby="plataformas-activas">
+          <h3 id="plataformas-activas" class="text-sm font-semibold text-neutral-700">Plataformas activas</h3>
+          <div class="mt-2 flex flex-wrap gap-2">
+            <span class="filter-chip text-brand-ig">Instagram</span>
+            <span class="filter-chip text-brand-tk">TikTok</span>
+            <span class="filter-chip text-brand-yt">YouTube</span>
+          </div>
+        </section>
+
+        <section class="mt-4" aria-labelledby="objetivo-mensual">
+          <h3 id="objetivo-mensual" class="text-sm font-semibold text-neutral-700">Objetivo mensual</h3>
+          <p class="mt-2 text-sm text-neutral-700">Comisión objetivo: <strong class="tabular-nums">7,500 EUR</strong></p>
+          <p class="mt-1 text-sm text-neutral-700">Avance actual: <strong class="tabular-nums">6,714 EUR</strong></p>
+        </section>
+
+        <section class="mt-4" aria-labelledby="guia-alertas">
+          <h3 id="guia-alertas" class="text-sm font-semibold text-neutral-700">Lectura de alertas</h3>
+          <ul class="mt-2 space-y-2 text-sm text-neutral-700">
+            <li><span class="tag-success">Estable</span> Resultado sobre benchmark esperado.</li>
+            <li><span class="tag-warning">Seguimiento</span> Riesgo de caída si no se optimiza segmentación.</li>
+            <li><span class="tag-critical">Crítico</span> Descenso abrupto de conversiones o CTR.</li>
+          </ul>
+        </section>
+      </aside>
+
+      <main id="contenido" class="space-y-6" aria-label="Panel analítico principal">
+        <section id="kpi" aria-labelledby="titulo-kpi">
+          <div class="mb-3 flex items-end justify-between">
+            <h2 id="titulo-kpi" class="panel-title">KPI Ejecutivos</h2>
+            <p class="text-sm text-neutral-600">Datos consolidados de 30 días</p>
+          </div>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <article class="kpi-card" aria-label="Volumen total de conversiones">
+              <p class="kpi-label">Volumen</p>
+              <p class="kpi-value">602</p>
+              <p class="kpi-foot"><span class="tag-success">+11.8%</span> vs periodo anterior</p>
+            </article>
+            <article class="kpi-card" aria-label="Ingresos por comisiones">
+              <p class="kpi-label">Comisiones</p>
+              <p class="kpi-value">6,714 EUR</p>
+              <p class="kpi-foot"><span class="tag-success">ROI +34%</span> rentabilidad neta</p>
+            </article>
+            <article class="kpi-card" aria-label="Ticket promedio de pedido">
+              <p class="kpi-label">AOV</p>
+              <p class="kpi-value">74.35 EUR</p>
+              <p class="kpi-foot"><span class="tag-warning">-2.1%</span> por mix de producto</p>
+            </article>
+            <article class="kpi-card" aria-label="Click Through Rate consolidado">
+              <p class="kpi-label">CTR</p>
+              <p class="kpi-value">2.86%</p>
+              <p class="kpi-foot"><span class="tag-success">+0.22pp</span> mejora creativa</p>
+            </article>
+            <article class="kpi-card" aria-label="Engagement rate de redes">
+              <p class="kpi-label">Engagement</p>
+              <p class="kpi-value">5.40%</p>
+              <p class="kpi-foot"><span class="tag-success">Top 18%</span> de la categoría</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="drivers" aria-labelledby="titulo-drivers">
+          <div class="mb-3 flex items-end justify-between">
+            <h2 id="titulo-drivers" class="panel-title">Drivers de Rendimiento</h2>
+            <p class="text-sm text-neutral-600">Embudo de conversión y comparativas por canal</p>
+          </div>
+          <div class="grid gap-4 lg:grid-cols-2">
+            <article class="chart-shell" aria-labelledby="funnel-title">
+              <h3 id="funnel-title" class="text-base font-semibold text-neutral-800">Embudo de ventas multicanal</h3>
+              <table class="charts-css column show-heading data-spacing-3 mt-3" aria-label="Embudo de ventas">
+                <caption class="sr-only">Relación entre alcance, interacción, conversiones y ventas</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Etapa</th>
+                    <th scope="col">Intensidad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="funnel-aw">
+                    <th scope="row">Alcance 2.4M</th>
+                    <td><span class="data">100%</span></td>
+                  </tr>
+                  <tr class="funnel-int">
+                    <th scope="row">Interacciones 1.58M</th>
+                    <td><span class="data">66%</span></td>
+                  </tr>
+                  <tr class="funnel-conv">
+                    <th scope="row">Clicks 0.94M</th>
+                    <td><span class="data">39%</span></td>
+                  </tr>
+                  <tr class="funnel-sales">
+                    <th scope="row">Ventas 0.62M</th>
+                    <td><span class="data">26%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </article>
+
+            <article class="chart-shell" aria-labelledby="channels-title">
+              <h3 id="channels-title" class="text-base font-semibold text-neutral-800">Rendimiento por plataforma</h3>
+              <div class="chart-frame mt-3">
+                <table class="charts-css bar show-heading data-spacing-4" aria-label="Comparativa de canales">
+                  <caption class="sr-only">Comparativa de eficiencia por plataforma</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Canal</th>
+                      <th scope="col">Performance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="channel-ig">
+                      <th scope="row">Instagram</th>
+                      <td><span class="data">84</span></td>
+                    </tr>
+                    <tr class="channel-tk">
+                      <th scope="row">TikTok</th>
+                      <td><span class="data">76</span></td>
+                    </tr>
+                    <tr class="channel-yt">
+                      <th scope="row">YouTube</th>
+                      <td><span class="data">69</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 class="mt-5 text-base font-semibold text-neutral-800">Rendimiento por producto</h3>
+              <div class="chart-frame chart-frame-product mt-3">
+                <table class="charts-css bar show-heading data-spacing-4" aria-label="Comparativa por producto">
+                  <caption class="sr-only">Comparativa de efectividad por producto promocionado</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Producto</th>
+                      <th scope="col">Score</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="product-a">
+                      <th scope="row">Producto A</th>
+                      <td><span class="data">71</span></td>
+                    </tr>
+                    <tr class="product-b">
+                      <th scope="row">Producto B</th>
+                      <td><span class="data">89</span></td>
+                    </tr>
+                    <tr class="product-c">
+                      <th scope="row">Producto C</th>
+                      <td><span class="data">77</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="operacion" aria-labelledby="titulo-operacion">
+          <div class="mb-3 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <h2 id="titulo-operacion" class="panel-title">Detalle Operacional y Alertas</h2>
+              <p class="text-sm text-neutral-600">Filtrado multicriterio para decisiones de optimización</p>
+            </div>
+            <form class="grid gap-2 sm:grid-cols-3" aria-label="Filtros globales del dashboard">
+              <label class="text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                Plataforma
+                <select class="filter-control mt-1" aria-label="Filtrar por plataforma global">
+                  <option>Todas</option>
+                  <option>IG</option>
+                  <option>TikTok</option>
+                  <option>YouTube</option>
+                </select>
+              </label>
+              <label class="text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                Rango de rendimiento
+                <select class="filter-control mt-1" aria-label="Filtrar por top o bajo desempeño">
+                  <option>Top</option>
+                  <option>Bajo desempeño</option>
+                </select>
+              </label>
+              <label class="text-xs font-semibold uppercase tracking-wide text-neutral-600">
+                Orden numérico
+                <select class="filter-control mt-1" aria-label="Ordenar columnas numéricas">
+                  <option>Ascendente</option>
+                  <option>Descendente</option>
+                </select>
+              </label>
+            </form>
+          </div>
+
+          <div class="grid gap-4 lg:grid-cols-[1.3fr_1fr]">
+            <article class="space-y-4" aria-labelledby="tabla-productos-titulo">
+              <div class="table-shell">
+                <div class="flex flex-col gap-2 border-b border-neutral-200 p-3 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 id="tabla-productos-titulo" class="text-base font-semibold text-neutral-800">Tabla de Productos</h3>
+                  <div class="flex flex-wrap gap-2" role="group" aria-label="Filtros locales de productos">
+                    <select class="filter-control" aria-label="Filtrar productos por plataforma">
+                      <option>Todos los canales</option>
+                      <option>Instagram</option>
+                      <option>TikTok</option>
+                      <option>YouTube</option>
+                    </select>
+                    <button type="button" class="btn-tab" aria-pressed="false">Ordenar ROI</button>
+                  </div>
+                </div>
+                <table class="metric-table" aria-label="Métricas por producto">
+                  <thead>
+                    <tr>
+                      <th scope="col">Producto</th>
+                      <th scope="col" class="numeric">Precio</th>
+                      <th scope="col" class="numeric">Conversiones</th>
+                      <th scope="col" class="numeric">Comisiones</th>
+                      <th scope="col" class="numeric">ROI</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">Producto A</th>
+                      <td class="numeric">50.00 EUR</td>
+                      <td class="numeric">280</td>
+                      <td class="numeric">2,100.00 EUR</td>
+                      <td class="numeric"><span class="tag-success">41%</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">Producto B</th>
+                      <td class="numeric">120.00 EUR</td>
+                      <td class="numeric">125</td>
+                      <td class="numeric">2,250.00 EUR</td>
+                      <td class="numeric"><span class="tag-success">54%</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">Producto C</th>
+                      <td class="numeric">80.00 EUR</td>
+                      <td class="numeric">197</td>
+                      <td class="numeric">2,364.00 EUR</td>
+                      <td class="numeric"><span class="tag-warning">29%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div class="table-shell">
+                <div class="flex flex-col gap-2 border-b border-neutral-200 p-3 sm:flex-row sm:items-center sm:justify-between">
+                  <h3 class="text-base font-semibold text-neutral-800">Tabla de Plataformas y Campañas</h3>
+                  <div class="flex flex-wrap gap-2" role="group" aria-label="Filtros locales de campañas">
+                    <select class="filter-control" aria-label="Filtrar campañas por rendimiento">
+                      <option>Top</option>
+                      <option>Bajo desempeño</option>
+                    </select>
+                    <button type="button" class="btn-tab" aria-pressed="true">Ordenar alcance</button>
+                  </div>
+                </div>
+                <table class="metric-table" aria-label="Métricas de campañas por plataforma">
+                  <thead>
+                    <tr>
+                      <th scope="col">Plataforma</th>
+                      <th scope="col">Campaña</th>
+                      <th scope="col" class="numeric">Alcance</th>
+                      <th scope="col" class="numeric">Interacciones</th>
+                      <th scope="col" class="numeric">CTR</th>
+                      <th scope="col">Líder</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">Instagram</th>
+                      <td>Stories Creator Set</td>
+                      <td class="numeric">920,000</td>
+                      <td class="numeric">486,400</td>
+                      <td class="numeric">3.12%</td>
+                      <td><span class="tag-success">Sí</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">TikTok</th>
+                      <td>UGC Challenge Sprint</td>
+                      <td class="numeric">810,000</td>
+                      <td class="numeric">461,700</td>
+                      <td class="numeric">2.94%</td>
+                      <td><span class="tag-warning">En mejora</span></td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="font-medium text-neutral-900">YouTube</th>
+                      <td>Review Deep Dive Live</td>
+                      <td class="numeric">670,000</td>
+                      <td class="numeric">312,100</td>
+                      <td class="numeric">2.42%</td>
+                      <td><span class="tag-critical">No</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+
+            <article class="surface-card p-4 sm:p-5" aria-labelledby="alertas-titulo">
+              <h3 id="alertas-titulo" class="text-base font-semibold text-neutral-800">Panel de Alertas</h3>
+              <p class="mt-1 text-sm text-neutral-600">Monitoreo de anomalías en conversiones y calidad de tráfico.</p>
+              <div class="mt-4 space-y-3" role="list" aria-label="Listado de alertas">
+                <article class="alert-card alert-success" role="listitem" aria-live="polite">
+                  <h4 class="text-sm font-semibold text-neutral-900">Pico positivo de conversiones en IG</h4>
+                  <p class="mt-1 text-sm text-neutral-700">La campaña Stories Creator Set subió 18 por ciento en conversiones durante la última semana.</p>
+                </article>
+                <article class="alert-card alert-warning" role="listitem" aria-live="polite">
+                  <h4 class="text-sm font-semibold text-neutral-900">AOV en descenso para Producto C</h4>
+                  <p class="mt-1 text-sm text-neutral-700">El ticket medio de Producto C cayó 6 por ciento tras ajustes en audiencias frías.</p>
+                </article>
+                <article class="alert-card alert-critical" role="listitem" aria-live="assertive">
+                  <h4 class="text-sm font-semibold text-neutral-900">Caída drástica de CTR en YouTube</h4>
+                  <p class="mt-1 text-sm text-neutral-700">Review Deep Dive Live perdió 0.41 puntos de CTR en 72 horas; revisar miniaturas y primeros 20 segundos.</p>
+                </article>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="border-t border-neutral-200 bg-white/80">
+      <div class="mx-auto flex w-full max-w-7xl flex-col gap-2 px-4 py-4 text-sm text-neutral-600 sm:px-6 md:flex-row md:items-center md:justify-between md:px-8">
+        <p>PulseAds Intelligence Layer · Actualización: 15/08/2026</p>
+        <p>Modelo de comisión fija 15 por ciento · Datos simulados para validación UX</p>
+      </div>
+    </footer>
+  </body>
+</html>

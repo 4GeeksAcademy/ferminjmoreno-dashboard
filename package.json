@@ -1,0 +1,13 @@
+{
+  "name": "ferminjmoreno-dashboard",
+  "private": true,
+  "scripts": {
+    "build:css": "npx @tailwindcss/cli -i ./src/styles.css -o ./styles.css",
+    "build:css:min": "npx @tailwindcss/cli -i ./src/styles.css -o ./styles.css --minify"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "charts.css": "^1.2.0",
+    "tailwindcss": "^4.3.3"
+  }
+}
